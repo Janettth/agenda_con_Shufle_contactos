@@ -25,6 +25,7 @@ struct pantalla_agenda: View {
     var ancho_de_pantalla = UIScreen.main.bounds.height
     
     var body: some View {
+        
         ScrollView{
             VStack(spacing:10) {
                 ForEach(contactos){ contacto in //bucle que craga 25 veces la vista
@@ -33,11 +34,49 @@ struct pantalla_agenda: View {
                 }
                
             }
+            
+            .frame(alignment: Alignment.center)
+            .padding(10)
             .background(Color.cyan)
-            .frame(
-                width: largo_de_pantalla, alignment: Alignment.center)
         }
         .background(Color.green)
+        
+        HStack(alignment: VerticalAlignment.center, spacing: 25)
+        {
+            ZStack{
+                Circle()
+                    .frame(width: 100)
+                    .foregroundColor(.red)
+                Rectangle()
+                    .frame(width: 55, height: 65)
+                    .foregroundColor(.blue)
+                Image(systemName: "plus")
+                    .background(Color.white)
+                    //.offset(x: 0, y: -20) posicion 
+            }
+            .padding(15)
+            .onTapGesture {
+                print("Falta implememyar esta parte")
+            }
+            
+            Spacer()
+            
+            ZStack{
+                Circle()
+                    .frame(width: 100)
+                    .foregroundColor(.red)
+                Rectangle()
+                    .frame(width: 55, height: 65)
+                    .foregroundColor(.blue)
+                Image(systemName: "shuffle")
+                    .background(Color.white)
+            }
+            .padding(15)
+            .onTapGesture {
+                print("intente para lanzar llamada")
+            }
+            
+        }
         
     }
 }

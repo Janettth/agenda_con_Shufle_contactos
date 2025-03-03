@@ -14,14 +14,14 @@ struct ContactoPrevista: View {
     
     var al_pulsar: () -> Void = {print("no se ha implementado")}
     
-    let esquinas_redondeadas = CGSize(width: 15, height: 15)
+    let esquinas_redondeadas = CGSize(width: 20, height: 20)
     
     var body: some View {
         HStack(alignment: VerticalAlignment.center){
             Spacer()
             
             VStack{
-                Image("imagen")
+                Image("Imagen")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 75,
@@ -33,19 +33,21 @@ struct ContactoPrevista: View {
             
             Spacer()
             
-            VStack(alignment: HorizontalAlignment.leading){
+            VStack(alignment: HorizontalAlignment.leading,
+                   spacing: 10){
                 Text(contacto_a_mostrar.nombre)
                 Text(contacto_a_mostrar.telefono)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color.gray)
-                .frame(width: 150)
             
             
             Spacer()
            
         }
-        .frame(width: 250) //dibuja un rectanculo especifico
+        .frame(maxWidth: .infinity) //dibuja un rectanculo especifico
         .background(Color.red)
+        .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
         .onTapGesture {
             al_pulsar()
         }

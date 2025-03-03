@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB13B2652D7618CD00254EF3 /* pantalla_agregar_contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB13B2642D7618CD00254EF3 /* pantalla_agregar_contacto.swift */; };
+		FB13B2672D761C4600254EF3 /* icono.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB13B2662D761C4600254EF3 /* icono.swift */; };
 		FBA257EF2D6F797D0005D54A /* agenda_shufleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA257EE2D6F797D0005D54A /* agenda_shufleApp.swift */; };
 		FBA257F32D6F797D0005D54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA257F22D6F797D0005D54A /* Assets.xcassets */; };
 		FBA257F62D6F797D0005D54A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA257F52D6F797D0005D54A /* Preview Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB13B2642D7618CD00254EF3 /* pantalla_agregar_contacto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_agregar_contacto.swift; sourceTree = "<group>"; };
+		FB13B2662D761C4600254EF3 /* icono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icono.swift; sourceTree = "<group>"; };
 		FBA257EB2D6F797D0005D54A /* agenda_shufle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agenda_shufle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA257EE2D6F797D0005D54A /* agenda_shufleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agenda_shufleApp.swift; sourceTree = "<group>"; };
 		FBA257F22D6F797D0005D54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB13B2632D7618A500254EF3 /* pantallas */ = {
+			isa = PBXGroup;
+			children = (
+				FB13B2642D7618CD00254EF3 /* pantalla_agregar_contacto.swift */,
+			);
+			path = pantallas;
+			sourceTree = "<group>";
+		};
 		FBA257E22D6F797D0005D54A = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +67,7 @@
 		FBA257ED2D6F797D0005D54A /* agenda_shufle */ = {
 			isa = PBXGroup;
 			children = (
+				FB13B2632D7618A500254EF3 /* pantallas */,
 				FBA258012D6F85A90005D54A /* Modelos */,
 				FBA257FE2D6F7F600005D54A /* Componentes */,
 				FBA257EE2D6F797D0005D54A /* agenda_shufleApp.swift */,
@@ -77,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA257FF2D6F7FC30005D54A /* contacto_prevista.swift */,
+				FB13B2662D761C4600254EF3 /* icono.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -159,9 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB13B2672D761C4600254EF3 /* icono.swift in Sources */,
 				FBA257FD2D6F7C0B0005D54A /* pantalla_agenda.swift in Sources */,
 				FBA258002D6F7FC30005D54A /* contacto_prevista.swift in Sources */,
 				FBA258032D6F87180005D54A /* contacto_agenda.swift in Sources */,
+				FB13B2652D7618CD00254EF3 /* pantalla_agregar_contacto.swift in Sources */,
 				FBA257EF2D6F797D0005D54A /* agenda_shufleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
