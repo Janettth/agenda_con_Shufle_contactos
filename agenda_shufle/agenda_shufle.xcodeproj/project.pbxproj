@@ -15,6 +15,7 @@
 		FBA257FD2D6F7C0B0005D54A /* pantalla_agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA257FC2D6F7C0B0005D54A /* pantalla_agenda.swift */; };
 		FBA258002D6F7FC30005D54A /* contacto_prevista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA257FF2D6F7FC30005D54A /* contacto_prevista.swift */; };
 		FBA258032D6F87180005D54A /* contacto_agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA258022D6F87180005D54A /* contacto_agenda.swift */; };
+		FBB9F0942D78BCFB00B20726 /* pantalla_del_ganador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB9F0932D78BCFB00B20726 /* pantalla_del_ganador.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FBA257FC2D6F7C0B0005D54A /* pantalla_agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_agenda.swift; sourceTree = "<group>"; };
 		FBA257FF2D6F7FC30005D54A /* contacto_prevista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_prevista.swift; sourceTree = "<group>"; };
 		FBA258022D6F87180005D54A /* contacto_agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_agenda.swift; sourceTree = "<group>"; };
+		FBB9F0932D78BCFB00B20726 /* pantalla_del_ganador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_del_ganador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				FB13B2642D7618CD00254EF3 /* pantalla_agregar_contacto.swift */,
+				FBB9F0932D78BCFB00B20726 /* pantalla_del_ganador.swift */,
 			);
 			path = pantallas;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				FB13B2672D761C4600254EF3 /* icono.swift in Sources */,
 				FBA257FD2D6F7C0B0005D54A /* pantalla_agenda.swift in Sources */,
 				FBA258002D6F7FC30005D54A /* contacto_prevista.swift in Sources */,
+				FBB9F0942D78BCFB00B20726 /* pantalla_del_ganador.swift in Sources */,
 				FBA258032D6F87180005D54A /* contacto_agenda.swift in Sources */,
 				FB13B2652D7618CD00254EF3 /* pantalla_agregar_contacto.swift in Sources */,
 				FBA257EF2D6F797D0005D54A /* agenda_shufleApp.swift in Sources */,

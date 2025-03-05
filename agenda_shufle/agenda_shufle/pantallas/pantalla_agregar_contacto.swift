@@ -20,40 +20,53 @@ struct PantallaAgregarContacto: View {
     }
     
     var body: some View {
-        Text("Colocar etiqueta nombre")
+        Text("Nombre:")
         ZStack{
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: 75)
-                .foregroundColor(.green)
+                .foregroundColor(.white)
             
-            TextField("Place holder", text: $nombre)
-                .padding(10)
+            TextField("Nombre", text: $nombre)
+                .padding(30)
         }
     
-        Text("colocar numero de tel")
-        TextField("Place holder numeros", text: $numeroTelefonico)
+        Text("Numero de teléfono")
+        TextField("656 xxxx xxx", text: $numeroTelefonico)
             .frame(height:35)
-            .padding(10)
+            .padding(30)
+            
         
         HStack{
-            //icono para agregr contacto
-            Icono(tamaño: 65, ruta_icono:
-                    "person.crop.circle.badge.plus",
-                    padding: 10)
-            .onTapGesture {
-                boton_agregar(nombre, numeroTelefonico)
+            Spacer()
+            ZStack{
+                Circle()
+                    .frame(width: 100)
+                    .foregroundColor(.green)
+                //icono para agregr contacto
+                Icono(tamaño: 65, ruta_icono:
+                        "person.crop.circle.badge.plus",
+                        padding: 10)
+                .onTapGesture {
+                    boton_agregar(nombre, numeroTelefonico)
+                }
             }
-            
+           
             Spacer()
             
-            //icono para salir de pantalla
-            Icono(tamaño: 65, ruta_icono:"return")
-                .background(nombre == "" ? Color.red: Color.cyan)
-                .onTapGesture {
-                    boton_salir()
-                }
+            ZStack{
+                Circle()
+                    .frame(width: 100)
+                    .foregroundColor(.green)
+                //icono para salir de pantalla
+                Icono(tamaño: 65, ruta_icono:"return")
+                    .background(nombre == "" ? Color.clear: Color.red)
+                    .onTapGesture {
+                        boton_salir()
+                    }
+            }
+            Spacer()
         }
-        .background(Color.cyan)
+        
        
     }
 }

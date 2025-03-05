@@ -27,26 +27,27 @@ struct ContactoPrevista: View {
                     .frame(width: 75,
                            alignment: .center)
                     .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
-                    .background(Color.blue)
+                    .background(Color.green)
                 
             }.background(Color.white)
             
             Spacer()
             
             VStack(alignment: HorizontalAlignment.leading,
-                   spacing: 10){
+                   spacing: 12){
                 Text(contacto_a_mostrar.nombre)
                 Text(contacto_a_mostrar.telefono)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.gray)
+            .padding(15)
+                //.background(Color.gray)
             
             
             Spacer()
            
         }
         .frame(maxWidth: .infinity) //dibuja un rectanculo especifico
-        .background(Color.red)
+        .background(Color.green)
         .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
         .onTapGesture {
             al_pulsar()

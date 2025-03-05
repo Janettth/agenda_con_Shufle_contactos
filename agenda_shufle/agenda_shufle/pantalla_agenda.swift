@@ -36,7 +36,12 @@ struct pantalla_agenda: View {
     var body: some View {
         
         ScrollView{
+            Spacer()
+            
+            Text("Mis contactos")
+            
             VStack(spacing:10) {
+                Spacer()
                 ForEach(contactos_actuales){ contacto in //bucle que craga 25 veces la vista
                     //Text("\(contacto.nombre)")
                     ContactoPrevista(contacto_a_mostrar: contacto, al_pulsar: {print("Te envia saludas \(contacto.nombre) desde pantalla agenda")})
@@ -46,26 +51,28 @@ struct pantalla_agenda: View {
             
             .frame(alignment: Alignment.center)
             .padding(10)
-            .background(Color.cyan)
+            //.background(Color.cyan)
         }
-        .background(Color.green)
+        .background(Color.white)
         
         HStack(alignment: VerticalAlignment.center, spacing: 25)
         {
+            Spacer()
+            
             ZStack{
                 Circle()
                     .frame(width: 100)
-                    .foregroundColor(.red)
+                    .foregroundColor(.white)
                 Circle()
                     .frame(width: 60)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.white)
                 Image(systemName: "plus")
                     .background(Color.white)
                     //.offset(x: 0, y: -20) posicion 
             }
             .padding(15)
             .onTapGesture {
-                print("Falta implememyar seccion agregar contacto")
+                print("Falta implememtar seccion agregar contacto")
                 mostrar_pantalla_agregar_contacto.toggle()
             }
             
@@ -74,10 +81,10 @@ struct pantalla_agenda: View {
             ZStack{
                 Circle()
                     .frame(width: 100)
-                    .foregroundColor(.red)
+                    .foregroundColor(.white)
                 Circle()
                     .frame(width: 65)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.white)
                 Image(systemName: "shuffle")
                     .background(Color.white)
             }
@@ -86,7 +93,9 @@ struct pantalla_agenda: View {
                 print("intente para lanzar llamada")
             }
             
-        }.background(Color.yellow)
+            Spacer()
+            
+        }.background(Color.green)
             .sheet(isPresented: $mostrar_pantalla_agregar_contacto){
                 PantallaAgregarContacto(boton_salir: {
                     mostrar_pantalla_agregar_contacto.toggle()
