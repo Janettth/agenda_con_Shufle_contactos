@@ -18,6 +18,7 @@ struct ContactoPrevista: View {
     
     var body: some View {
         HStack(alignment: VerticalAlignment.center){
+            
             Spacer()
             
             VStack{
@@ -33,20 +34,20 @@ struct ContactoPrevista: View {
             
             Spacer()
             
-            VStack(alignment: HorizontalAlignment.leading,
-                   spacing: 12){
+            VStack(alignment: HorizontalAlignment.center,
+                   spacing: 10){
                 Text(contacto_a_mostrar.nombre)
                 Text(contacto_a_mostrar.telefono)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(15)
+                   .frame(maxWidth: 150, alignment: .center)
+            
                 //.background(Color.gray)
             
             
             Spacer()
            
         }
-        .frame(maxWidth: .infinity) //dibuja un rectanculo especifico
+        .frame(maxWidth: .infinity, maxHeight: 150) //dibuja un rectanculo especifico
         .background(Color.green)
         .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
         .onTapGesture {

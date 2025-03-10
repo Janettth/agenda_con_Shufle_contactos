@@ -12,11 +12,11 @@ struct PantallaAgregarContacto: View {
     @State private var numeroTelefonico: String = ""
     
     var boton_salir: () -> Void = {
-        print("te equivocaste")
+        print("Saliendooo")
     }
     
     var boton_agregar: (_ nombre: String, _ numero: String) -> Void = { nombre, numero in
-        print("te equivocaste")
+        print("Agregarndoooo")
     }
     
     var body: some View {
@@ -29,12 +29,12 @@ struct PantallaAgregarContacto: View {
             TextField("Nombre", text: $nombre)
                 .padding(30)
         }
-    
+        
         Text("Numero de teléfono")
         TextField("656 xxxx xxx", text: $numeroTelefonico)
             .frame(height:35)
             .padding(30)
-            
+        
         
         HStack{
             Spacer()
@@ -45,13 +45,17 @@ struct PantallaAgregarContacto: View {
                 //icono para agregr contacto
                 Icono(tamaño: 65, ruta_icono:
                         "person.crop.circle.badge.plus",
-                        padding: 10)
+                      padding: 10)
                 .onTapGesture {
                     boton_agregar(nombre, numeroTelefonico)
                 }
             }
-           
+            
             Spacer()
+            
+            HStack{
+                
+            }
             
             ZStack{
                 Circle()
@@ -59,7 +63,7 @@ struct PantallaAgregarContacto: View {
                     .foregroundColor(.green)
                 //icono para salir de pantalla
                 Icono(tamaño: 65, ruta_icono:"return")
-                    .background(nombre == "" ? Color.clear: Color.red)
+                    .background(nombre == "" ? Color.clear: Color.clear)
                     .onTapGesture {
                         boton_salir()
                     }
@@ -67,7 +71,7 @@ struct PantallaAgregarContacto: View {
             Spacer()
         }
         
-       
+        
     }
 }
 

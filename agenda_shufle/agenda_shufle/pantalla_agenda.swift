@@ -19,12 +19,17 @@ var contactos = [
     
 ]
 
+enum PantallasDisponibles: String, Identifiable{
+    case pantalla_agegar, pantalla_aleatorio
+    
+    var id: String{ rawValue }
+    
+}
 struct pantalla_agenda: View {
     
     var largo_de_pantalla = UIScreen.main.bounds.width
     var ancho_de_pantalla = UIScreen.main.bounds.height
     
-    @State var mostrar_pantalla_agregar_contacto: Bool = false
     
     @State var contactos_actuales: [ContactoAgenda] = [
         ContactoAgenda(nombre: "Juancho", telefono: "12345"),
@@ -32,6 +37,8 @@ struct pantalla_agenda: View {
         ContactoAgenda(nombre: "Juancho", telefono: "12345"),
         ContactoAgenda(nombre: "Juancho", telefono: "12345")
     ]
+    
+    @State var pantalla_a_mostrar: PantallasDisponibles?
     
     var body: some View {
         
@@ -42,7 +49,7 @@ struct pantalla_agenda: View {
             
             VStack(spacing:10) {
                 Spacer()
-                ForEach(contactos_actuales){ contacto in //bucle que craga 25 veces la vista
+                ForEach(contactos_actuales){ contacto in
                     //Text("\(contacto.nombre)")
                     ContactoPrevista(contacto_a_mostrar: contacto, al_pulsar: {print("Te envia saludas \(contacto.nombre) desde pantalla agenda")})
                 }
@@ -72,8 +79,8 @@ struct pantalla_agenda: View {
             }
             .padding(15)
             .onTapGesture {
-                print("Falta implememtar seccion agregar contacto")
-                mostrar_pantalla_agregar_contacto.toggle()
+                print("Se agrego un contacto")
+                pantalla_a_mostrar = PantallasDisponibles.pantalla_agegar
             }
             
             Spacer()
@@ -91,23 +98,30 @@ struct pantalla_agenda: View {
             .padding(15)
             .onTapGesture {
                 print("intente para lanzar llamada")
+                pantalla_a_mostrar = PantallasDisponibles.pantalla_aleatorio
             }
             
             Spacer()
             
         }.background(Color.green)
-            .sheet(isPresented: $mostrar_pantalla_agregar_contacto){
-                PantallaAgregarContacto(boton_salir: {
-                    mostrar_pantalla_agregar_contacto.toggle()
-                }, boton_agregar: {nombre, numero in
-                    let contacto_nuevo = ContactoAgenda(nombre: nombre, telefono: numero)
-                    contactos_actuales.append(contacto_nuevo)
-                    mostrar_pantalla_agregar_contacto.toggle()
+            .sheet(item: $pantalla_a_mostrar){ pantalla in
+                switch (pantalla){
+                case .pantalla_agegar:
+                    PantallaAgregarContacto(
+                        boton_salir: {
+                            pantalla_a_mostrar = PantallasDisponibles.pantalla_aleatorio
+                        },
+                        boton_agregar: {nombre, numero in 
+                            let contacto_nuevo = ContactoAgenda(nombre:nombre, telefono: numero)
+                            contactos_actuales.append(contacto_nuevo)
+                            pantalla_a_mostrar = nil
+                        }
+                    )
                     
-                })
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Sheet Content")/*@END_MENU_TOKEN@*/
+                case .pantalla_aleatorio:
+                    Text("aaaaaaaaa")
+                }
             }
-        
     }
 }
 
