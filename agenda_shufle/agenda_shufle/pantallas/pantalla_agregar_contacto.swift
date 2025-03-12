@@ -20,49 +20,52 @@ struct PantallaAgregarContacto: View {
     }
     
     var body: some View {
-        Text("Nombre:")
-        ZStack{
-            Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: 75)
-                .foregroundColor(.white)
+        
+        VStack(alignment: HorizontalAlignment.leading, spacing: 10){
+            Text("Nombre:").bold()
+            ZStack{
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: 75)
+                    .foregroundColor(Color(red: 0.4, green: 0.6, blue: 0.2))
+                
+                TextField("Nombre", text: $nombre)
+                    
+            }
+        }.padding()
+      
+        VStack(alignment: HorizontalAlignment.leading){
+            Text("Numero de teléfono").bold()
+            ZStack{
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: 75)
+                    .foregroundColor(.white)
+                TextField("656 xxxx xxx", text: $numeroTelefonico)
+            }
+        }.padding()
             
-            TextField("Nombre", text: $nombre)
-                .padding(30)
-        }
-        
-        Text("Numero de teléfono")
-        TextField("656 xxxx xxx", text: $numeroTelefonico)
-            .frame(height:35)
-            .padding(30)
-        
-        
-        HStack{
+            
+        HStack(alignment: VerticalAlignment.center, spacing: 50){
             Spacer()
             ZStack{
-                Circle()
-                    .frame(width: 100)
-                    .foregroundColor(.green)
+                RoundedRectangle(cornerRadius: 40)
+                    .frame(width: 80, height: 80)
+                    .foregroundColor(Color(red: 0.4, green: 0.6, blue: 0.2))
                 //icono para agregr contacto
-                Icono(tamaño: 65, ruta_icono:
-                        "person.crop.circle.badge.plus",
+                Icono(tamaño: 45, ruta_icono:
+                      "person.fill.badge.plus",
                       padding: 10)
                 .onTapGesture {
                     boton_agregar(nombre, numeroTelefonico)
                 }
             }
             
-            Spacer()
-            
-            HStack{
-                
-            }
             
             ZStack{
-                Circle()
-                    .frame(width: 100)
-                    .foregroundColor(.green)
+                RoundedRectangle(cornerRadius: 40)
+                    .frame(width: 80, height: 80)
+                    .foregroundColor(Color(red: 0.4, green: 0.6, blue: 0.2))
                 //icono para salir de pantalla
-                Icono(tamaño: 65, ruta_icono:"return")
+                Icono(tamaño: 45, ruta_icono:"arrowshape.turn.up.backward.circle.fill")
                     .background(nombre == "" ? Color.clear: Color.clear)
                     .onTapGesture {
                         boton_salir()

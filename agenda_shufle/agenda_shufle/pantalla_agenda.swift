@@ -41,26 +41,29 @@ struct pantalla_agenda: View {
     @State var pantalla_a_mostrar: PantallasDisponibles?
     
     var body: some View {
-        
-        ScrollView{
-            Spacer()
-            
-            Text("Mis contactos")
-            
-            VStack(spacing:10) {
-                Spacer()
-                ForEach(contactos_actuales){ contacto in
-                    //Text("\(contacto.nombre)")
-                    ContactoPrevista(contacto_a_mostrar: contacto, al_pulsar: {print("Te envia saludas \(contacto.nombre) desde pantalla agenda")})
+        NavigationStack{
+            ScrollView{
+                VStack(spacing:10) {
+                    ForEach(contactos_actuales){ contacto in
+                        NavigationLink{
+                            Text("Hola mundo")
+                        }label: {
+                            //Text("\(contacto.nombre)")
+                            ContactoPrevista(contacto_a_mostrar: contacto, al_pulsar: {print("Te envia saludas \(contacto.nombre) desde pantalla agenda")})
+                        }
+                      
+                    }
+                   
                 }
-               
+                
+                .frame(alignment: Alignment.center)
+                .padding(10)
+                //.background(Color.cyan)
             }
-            
-            .frame(alignment: Alignment.center)
-            .padding(10)
-            //.background(Color.cyan)
+            .background(Color.white)
         }
-        .background(Color.white)
+        
+        //fin del sroll view
         
         HStack(alignment: VerticalAlignment.center, spacing: 25)
         {

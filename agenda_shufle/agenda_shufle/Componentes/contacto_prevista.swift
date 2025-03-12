@@ -50,9 +50,9 @@ struct ContactoPrevista: View {
         .frame(maxWidth: .infinity, maxHeight: 150) //dibuja un rectanculo especifico
         .background(Color.green)
         .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
-        .onTapGesture {
+        /*.onTapGesture {
             al_pulsar()
-        }
+        }*/
         
     }
 }
