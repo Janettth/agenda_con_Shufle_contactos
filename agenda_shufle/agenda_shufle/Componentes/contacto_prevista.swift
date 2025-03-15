@@ -30,7 +30,7 @@ struct ContactoPrevista: View {
 
      
 
-    let esquinas_redondeadas = CGSize(width: 25, height: 25)
+    let esquinas_redondeadas = CGSize(width: 30, height: 30)
 
      
 
@@ -47,18 +47,20 @@ struct ContactoPrevista: View {
             VStack{
 
                 Image("Imagen")
+                
 
                     .resizable()
 
                     .aspectRatio(contentMode: .fit)
 
-                    .frame(width: 75,
+                    .frame(width: 120,
 
                            alignment: .center)
 
                     .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
 
                     .background(Color(red: 0.4, green: 0.6, blue: 0.2))
+                
 
                  
 
@@ -74,16 +76,16 @@ struct ContactoPrevista: View {
 
                    spacing: 10){
 
-                Text(contacto_a_mostrar.nombre)
+                Text(contacto_a_mostrar.nombre).foregroundColor(.white).font(.system(size: 20))
 
-                Text(contacto_a_mostrar.telefono)
+                Text(contacto_a_mostrar.telefono).foregroundColor(.white).font(.system(size: 20))
 
             }
 
                    .frame(maxWidth: 150, alignment: .center)
 
-.font(.system(size: 16))
-
+                   .font(.system(size: 16))
+                   
              
 
                 //.background(Color.gray)
@@ -98,7 +100,7 @@ struct ContactoPrevista: View {
 
         }
 
-        .frame(maxWidth: .infinity, maxHeight: 150) //dibuja un rectanculo especifico
+        .frame(maxWidth: .infinity, maxHeight: 200) //dibuja un rectanculo especifico
 
         .background(Color(red: 0.4, green: 0.6, blue: 0.2))
 

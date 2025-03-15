@@ -18,7 +18,6 @@ import SwiftUI
 
 var contacto_alterno = ContactoAgenda(nombre: "Juanita", telefono: "656 7432")
 
- 
 
 struct pantallaDelGanador: View {
 
@@ -27,7 +26,7 @@ struct pantallaDelGanador: View {
     var body: some View {
 
          
-
+        
         VStack(alignment: HorizontalAlignment.center, spacing: 40){
 
          
@@ -64,13 +63,13 @@ struct pantallaDelGanador: View {
 
                          
 
-                    }.font(.custom("Courier",size: 25))
+                    }.font(.system(size: 25))
 
                      
 
                 }
 
-                 
+                 /*
 
                 HStack(alignment: VerticalAlignment.center, spacing: 35){
 
@@ -107,14 +106,17 @@ struct pantallaDelGanador: View {
                         Image(systemName: "arrowshape.turn.up.backward.circle.fill")
 
                             .frame(width: 100)
+                        
 
+                    }.onTapGesture {
+                        print("ejemplo")
                     }
 
                      
 
                     Spacer()
 
-                }  .font(.system(size: 40))
+                }  .font(.system(size: 40)) */
 
         }
 

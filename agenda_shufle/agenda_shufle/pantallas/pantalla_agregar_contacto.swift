@@ -60,6 +60,7 @@ struct PantallaAgregarContacto: View {
                      
 
                     TextField("Nombre", text: $nombre)
+                        .padding(20)
 
                          
 
@@ -85,6 +86,7 @@ struct PantallaAgregarContacto: View {
                         .foregroundColor(Color(red: 1, green:1, blue: 1, opacity: 0.5))
 
                     TextField("656 xxxx xxx", text: $numeroTelefonico)
+                        .padding(20)
 
                 }
 
@@ -104,11 +106,11 @@ struct PantallaAgregarContacto: View {
                
                    .frame(width: 80, height: 80)
                
-                   .foregroundColor(Color(red: 0.4, green: 0.6, blue: 0.2))
+                   .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.5))
                
                //icono para agregr contacto
                
-               Icono(tamaño: 45, ruta_icono:
+               Icono(tamaño: 35, ruta_icono:
                        
                        "person.fill.badge.plus",
                      
@@ -132,11 +134,11 @@ struct PantallaAgregarContacto: View {
 
                    .frame(width: 80, height: 80)
 
-                   .foregroundColor(Color(red: 0.4, green: 0.6, blue: 0.2))
+                   .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.5))
 
                //icono para salir de pantalla
 
-               Icono(tamaño: 45, ruta_icono:"arrowshape.turn.up.backward.circle.fill")
+               Icono(tamaño: 35, ruta_icono:"arrowshape.turn.up.backward.circle.fill")
 
                    .background(nombre == "" ? Color.clear: Color.clear)
 
@@ -152,8 +154,10 @@ struct PantallaAgregarContacto: View {
 
        }
             
-        }    .background(Color(red: 0.4, green: 0.6, blue: 0.2))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }       .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
+            .background(Color(red: 0.4, green: 0.6, blue: 0.2))
+
          
 
     }
